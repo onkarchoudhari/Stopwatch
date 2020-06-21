@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -f my_stopwatch_op ]; then
+	Value=$(cat my_stopwatch_op)
+	systray="$Value"
+else
+	systray="Have a good day  :)"
+fi
+
+echo "$systray"
+
+trap 'rm my_stopwatch_op' EXIT
+
+exit 0
